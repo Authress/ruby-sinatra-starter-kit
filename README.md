@@ -18,7 +18,9 @@ Set the Authress block in the app.rb to match your account
 
 ```rb
 AuthressSdk.configure do |config|
-  # config.base_url = 'https://login.company.com'
+  # Set the base url to be the Authress Custom Domain, which can be set up: https://authress.io/app/#/settings?focus=domain
+  config.base_url = 'https://login.company.com'
+
   # Get a service client access key at https://authress.io/app/#/settings?focus=clients
   client_access_key = 'sc_001.b3bB.acc_001.MC4C_KEY'
   config.token_provider = AuthressSdk::ServiceClientTokenProvider.new(client_access_key)
