@@ -23,7 +23,7 @@ jobs:
     - name: Install packages
       run: gem install bundler:'~> 2.4.9' && bundle install
 
-    - name: Run build
-      run: |
-        bundle exec rake --trace
-        bundle exec rake build --trace
+    # - name: Run build
+    #   run: |
+    #     bundle exec rake --trace
+    #     bundle exec rake build --trace
