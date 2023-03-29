@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+    - main
+    - 'release/**'
+  pull_request:
+    branches:
+    - main
+    - 'release/**'
+
+jobs:
+  ruby:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1.144.2
+      with:
+        ruby-version: 3.0
+        # bundler-cache: true
+
+    - name: Install packages
+      run: gem install bundler:'~> 2.4.9' && bundle install
+
+    - name: Run build
+      run: |
+        bundle exec rake --trace
+        bundle exec rake build --trace
