@@ -24,7 +24,7 @@ AuthressSdk.configure do |config|
   config.token_provider = AuthressSdk::ServiceClientTokenProvider.new(client_access_key)
 end
 # Specify your application identifier or generate a new one: https://authress.io/app/#/settings?focus=applications
-application_id = 'app_w5JRgS8hnEc1eKbXsojvn1'
+application_id = 'app_default'
 login_client = AuthressSdk::LoginApi.new(application_id)
 
 ##########################################################################################
